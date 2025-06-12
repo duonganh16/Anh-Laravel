@@ -18,9 +18,12 @@ class OrderController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        //
-    }
+{
+    $customers = Customer::all();
+    $foods = Food::all();
+    return view('orders.create', compact('customers', 'foods'));
+}
+
 
     /**
      * Store a newly created resource in storage.
